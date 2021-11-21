@@ -15,7 +15,7 @@ from glob import glob
 SEED = 42
 
 # Image size that we are going to use
-IMG_SIZE = 400
+IMG_SIZE = 224
 # Our images are RGB (3 channels)
 N_CHANNELS = 3
 # Scene Parsing has 150 classes + `not labeled`
