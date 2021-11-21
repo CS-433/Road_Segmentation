@@ -38,10 +38,10 @@ RECORDING_STEP = 0
 # image size should be an integer multiple of this number!
 IMG_PATCH_SIZE = 16
 
-tf.app.flags.DEFINE_string('train_dir', '/tmp/segment_aerial_images',
-                           """Directory where to write event logs """
-                           """and checkpoint.""")
-FLAGS = tf.app.flags.FLAGS
+tf.compat.v1.flags.DEFINE_string('train_dir', '/tmp/segment_aerial_images',
+"""Directory where to write event logs """
+"""and checkpoint.""")
+FLAGS = tf.compat.v1.flags.FLAGS
 
 
 # Extract patches from a given image
