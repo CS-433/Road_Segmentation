@@ -19,7 +19,7 @@ IMG_SIZE = 400
 # Our images are RGB (3 channels)
 N_CHANNELS = 3
 
-N_CLASSES = 3
+N_CLASSES = 2
 
 def parse_image(img_path: str) -> dict:
     """Load an image and its annotation (mask) and returning
@@ -171,7 +171,7 @@ def show_predictions(dataset=None, num=1):
     """
     if dataset:
         for image, mask in dataset.take(num):
-            pred_mask = unet_model.predict(image)
+            pred_mask = model.predict(image)
             display_sample([image[0], true_mask, create_mask(pred_mask)])
     else:
         # The model is expecting a tensor of the size
@@ -181,7 +181,7 @@ def show_predictions(dataset=None, num=1):
         # so we add an additional dimension [1, IMG_SIZE, IMG_SIZE, 3]
         one_img_batch = sample_image[0][tf.newaxis, ...]
         # one_img_batch -> [1, IMG_SIZE, IMG_SIZE, 3]
-        inference = unet_model.predict(one_img_batch)
+        inference = model.predict(one_img_batch)
         # inference -> [1, IMG_SIZE, IMG_SIZE, N_CLASS]
         pred_mask = create_mask(inference)
         # pred_mask -> [1, IMG_SIZE, IMG_SIZE, 1]
