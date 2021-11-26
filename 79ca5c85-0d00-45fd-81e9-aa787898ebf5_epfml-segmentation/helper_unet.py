@@ -56,6 +56,9 @@ def parse_image(img_path: str) -> dict:
     # With the same dtype than the tensor itself
 
     return {'image': image, 'groundtruth': mask}
+    
+
+
 
 def normalize(input_image: tf.Tensor, input_mask: tf.Tensor) -> tuple:
     """Rescale the pixel values of the images between 0.0 and 1.0
