@@ -22,39 +22,15 @@ N_CHANNELS = 3
 N_CLASSES = 2
 
 def parse_image(img_path: str) -> dict:
-    """Load an image and its annotation (mask) and returning
-    a dictionary.
-
-    Parameters
-    ----------
-    img_path : str
-        Image (not the mask) location.
-
-    Returns
-    -------
-    dict
-        Dictionary mapping an image and its annotation.
-    """
     image = tf.io.read_file(img_path)
     image = tf.image.decode_png(image, channels=3)
     image = tf.image.convert_image_dtype(image, tf.uint8)
 
-    # For one Image path:
-    # .../trainset/images/training/ADE_train_00000001.jpg
-    # Its corresponding annotation path is:
-    # .../trainset/annotations/training/ADE_train_00000001.png
+    #Changing path to groundtruth
     mask_path = tf.strings.regex_replace(img_path, "images", "groundtruth")
     mask = tf.io.read_file(mask_path)
     # The masks contain a class index for each pixels
-    mask = tf.image.decode_png(mask, channels=1)
-    # In scene parsing, "not labeled" = 255
-    # But it will mess up with our N_CLASS = 150
-    # Since 255 means the 255th class
-    # Which doesn't exist
-    mask = tf.where(mask == 255, np.dtype('uint8').type(0), mask)
-    # Note that we have to convert the new value (0)
-    # With the same dtype than the tensor itself
-
+    mask = tf.image.decode_png(mask, channels=1, dtype=tf.dtypes.uint8) #dtype=tf.dtypes.uint8
     return {'image': image, 'groundtruth': mask}
     
 
@@ -77,34 +53,17 @@ def normalize(input_image: tf.Tensor, input_mask: tf.Tensor) -> tuple:
         Normalized image and its annotation.
     """
     input_image = tf.cast(input_image, tf.float32) / 255.0
+    input_mask = tf.cast(input_mask,  tf.float32) / 255.0
     return input_image, input_mask
 
 def load_image_train(datapoint: dict) -> tuple:
-    """Apply some transformations to an input dictionary
-    containing a train image and its annotation.
-
-    Notes
-    -----
-    An annotation is a regular  channel image.
-    If a transformation such as rotation is applied to the image,
-    the same transformation has to be applied on the annotation also.
-
-    Parameters
-    ----------
-    datapoint : dict
-        A dict containing an image and its annotation.
-
-    Returns
-    -------
-    tuple
-        A modified image and its annotation.
-    """
+    
     input_image = tf.image.resize(datapoint['image'], (IMG_SIZE, IMG_SIZE))
     input_mask = tf.image.resize(datapoint['groundtruth'], (IMG_SIZE, IMG_SIZE))
 
-    if tf.random.uniform(()) > 0.5:
-        input_image = tf.image.flip_left_right(input_image)
-        input_mask = tf.image.flip_left_right(input_mask)
+    #if tf.random.uniform(()) > 0.5:
+    #    input_image = tf.image.flip_left_right(input_image)
+    #   input_mask = tf.image.flip_left_right(input_mask)
 
     input_image, input_mask = normalize(input_image, input_mask)
 
@@ -152,14 +111,16 @@ def display_sample(display_list):
     plt.show()
 
 def create_mask(pred_mask: tf.Tensor) -> tf.Tensor:
-
     # pred_mask -> [IMG_SIZE, SIZE, N_CLASS]
     # 1 prediction for each class but we want the highest score only
     # so we use argmax
-    pred_mask = tf.argmax(pred_mask, axis=-1)
+    #pred_mask = tf.argmax(pred_mask, axis=-1)
     # pred_mask becomes [IMG_SIZE, IMG_SIZE]
     # but matplotlib needs [IMG_SIZE, IMG_SIZE, 1]
-    pred_mask = tf.expand_dims(pred_mask, axis=-1)
+    pred_mask = tf.where(pred_mask >=0.5, 0.92941177, 0.0, pred_mask)
+    
+    
+    #pred_mask = pred_mask[..., tf.newaxis]
     return pred_mask
 
 def show_predictions(dataset=None, num=1):
