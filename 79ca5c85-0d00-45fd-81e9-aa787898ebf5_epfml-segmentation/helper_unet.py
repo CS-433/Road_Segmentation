@@ -1,153 +1,30 @@
+import matplotlib.image as mpimg
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-import torch
-import torch.nn as nn
-from torch.autograd import Variable
 import os,sys
 from PIL import Image
-import tensorflow as tf
-from IPython.display import clear_output
-import tensorflow_datasets as tfds
-import tensorflow.io as tfio
-from glob import glob
-
-SEED = 42
-
-# Image size that we are going to use
-IMG_SIZE = 400
-# Our images are RGB (3 channels)
-N_CHANNELS = 3
-
-N_CLASSES = 2
-
-def parse_image(img_path: str) -> dict:
-    image = tf.io.read_file(img_path)
-    image = tf.image.decode_png(image, channels=3)
-    image = tf.image.convert_image_dtype(image, tf.uint8)
-
-    #Changing path to groundtruth
-    mask_path = tf.strings.regex_replace(img_path, "images", "groundtruth")
-    mask = tf.io.read_file(mask_path)
-    # The masks contain a class index for each pixels
-    mask = tf.image.decode_png(mask, channels=1, dtype=tf.dtypes.uint8) #dtype=tf.dtypes.uint8
-    return {'image': image, 'groundtruth': mask}
-    
 
 
 
-def normalize(input_image: tf.Tensor, input_mask: tf.Tensor) -> tuple:
-    """Rescale the pixel values of the images between 0.0 and 1.0
-    compared to [0,255] originally.
+def load_image(infilename):
+    data = mpimg.imread(infilename)
+    return data
 
-    Parameters
-    ----------
-    input_image : tf.Tensor
-        Tensorflow tensor containing an image of size [SIZE,SIZE,3].
-    input_mask : tf.Tensor
-        Tensorflow tensor containing an annotation of size [SIZE,SIZE,1].
+def img_float_to_uint8(img):
+    rimg = img - np.min(img)
+    rimg = (rimg / np.max(rimg) * 255).round().astype(np.uint8)
+    return rimg
 
-    Returns
-    -------
-    tuple
-        Normalized image and its annotation.
-    """
-    input_image = tf.cast(input_image, tf.float32) / 255.0
-    input_mask = tf.cast(input_mask,  tf.float32) / 255.0
-    return input_image, input_mask
-
-def load_image_train(datapoint: dict) -> tuple:
-    
-    input_image = tf.image.resize(datapoint['image'], (IMG_SIZE, IMG_SIZE))
-    input_mask = tf.image.resize(datapoint['groundtruth'], (IMG_SIZE, IMG_SIZE))
-
-    #if tf.random.uniform(()) > 0.5:
-    #    input_image = tf.image.flip_left_right(input_image)
-    #   input_mask = tf.image.flip_left_right(input_mask)
-
-    input_image, input_mask = normalize(input_image, input_mask)
-
-    return input_image, input_mask
-
-
-def load_image_test(datapoint: dict) -> tuple:
-    """Normalize and resize a test image and its annotation.
-
-    Notes
-    -----
-    Since this is for the test set, we don't need to apply
-    any data augmentation technique.
-
-    Parameters
-    ----------
-    datapoint : dict
-        A dict containing an image and its annotation.
-
-    Returns
-    -------
-    tuple
-        A modified image and its annotation.
-    """
-    input_image = tf.image.resize(datapoint['image'], (IMG_SIZE, IMG_SIZE))
-    input_mask = tf.image.resize(datapoint['groundtruth'], (IMG_SIZE, IMG_SIZE))
-
-    input_image, input_mask = normalize(input_image, input_mask)
-
-    return input_image, input_mask
-
-def display_sample(display_list):
-    """Show side-by-side an input image,
-    the ground truth and the prediction.
-    """
-    plt.figure(figsize=(18, 18))
-
-    title = ['Input Image', 'True Mask', 'Predicted Mask']
-
-    for i in range(len(display_list)):
-        plt.subplot(1, len(display_list), i+1)
-        plt.title(title[i])
-        plt.imshow(tf.keras.preprocessing.image.array_to_img(display_list[i]))
-        plt.axis('off')
-    plt.show()
-
-def create_mask(pred_mask: tf.Tensor) -> tf.Tensor:
-    # pred_mask -> [IMG_SIZE, SIZE, N_CLASS]
-    # 1 prediction for each class but we want the highest score only
-    # so we use argmax
-    #pred_mask = tf.argmax(pred_mask, axis=-1)
-    # pred_mask becomes [IMG_SIZE, IMG_SIZE]
-    # but matplotlib needs [IMG_SIZE, IMG_SIZE, 1]
-    pred_mask = tf.where(pred_mask >=0.5, 0.92941177, 0.0, pred_mask)
-    
-    
-    #pred_mask = pred_mask[..., tf.newaxis]
-    return pred_mask
-
-def show_predictions(dataset=None, num=1):
-    """Show a sample prediction.
-
-    Parameters
-    ----------
-    dataset : [type], optional
-        [Input dataset, by default None
-    num : int, optional
-        Number of sample to show, by default 1
-    """
-    if dataset:
-        for image, mask in dataset.take(num):
-            pred_mask = model.predict(image)
-            display_sample([image[0], true_mask, create_mask(pred_mask)])
-    else:
-        # The model is expecting a tensor of the size
-        # [BATCH_SIZE, IMG_SIZE, IMG_SIZE, 3]
-        # but sample_image[0] is [IMG_SIZE, IMG_SIZE, 3]
-        # and we want only 1 inference to be faster
-        # so we add an additional dimension [1, IMG_SIZE, IMG_SIZE, 3]
-        one_img_batch = sample_image[0][tf.newaxis, ...]
-        # one_img_batch -> [1, IMG_SIZE, IMG_SIZE, 3]
-        inference = model.predict(one_img_batch)
-        # inference -> [1, IMG_SIZE, IMG_SIZE, N_CLASS]
-        pred_mask = create_mask(inference)
-        # pred_mask -> [1, IMG_SIZE, IMG_SIZE, 1]
-        display_sample([sample_image[0], sample_mask[0],
-                        pred_mask[0]])
+def img_crop(im, w, h):
+    list_patches = []
+    imgwidth = im.shape[0]
+    imgheight = im.shape[1]
+    is_2d = len(im.shape) < 3
+    for i in range(0,imgheight,h):
+        for j in range(0,imgwidth,w):
+            if is_2d:
+                im_patch = im[j:j+w, i:i+h]
+            else:
+                im_patch = im[j:j+w, i:i+h, :]
+            list_patches.append(im_patch)
+    return list_patches
