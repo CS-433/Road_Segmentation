@@ -10,7 +10,7 @@ ml-project-2-the-happy-whales2 created by GitHub Classroom
 * patchify
 * matplotlib
 * keras
-* tensorfow
+* tensorfow= 2.7.0
 
 
 
