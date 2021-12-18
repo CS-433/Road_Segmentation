@@ -17,10 +17,35 @@ This project takes aerial images and detects roads with a segmenation algorithm.
 * tensorfow= 2.7.0
 
 ## Structure of files
-ML_project  
-|  ..   
-|--- data  
-|    |    
 
+ML_project  
+ |-- data  
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- training  
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- images  
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |--satImage_001.png  
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- ...  
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- groundtruth  
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |--satImage_001.png  
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- ...  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- test_set    
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- images    
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |--test_1.png    
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- ...    
+ |-- src  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- train.py  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- run.py  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- DataPreprocessing.py  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- DataAugmentation.py  
+ |-- saved_models  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- unet_aug4rot_Gblur5_Flips.hdf5  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
+ |-- prediciton_unet  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- pred_1_unet.png    
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
+ |-- submissions  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- submission_unet_augbcp_f32_p128.csv    
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...    
+ 
+ 
 
 ## Usage
