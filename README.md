@@ -11,7 +11,7 @@ An example of an aerial image used for training and its mask is shown below:
 <img src="ML_project/training/images/satImage_001.png" alt="classdiagram"  width="200" title="hover text">
 <img src="ML_project/training/groundtruth/satImage_001.png"  alt="classdiagram" width="200" >
 </p>
-The set of training and test images is available on this page: [EPFL ML Road Segmentation challenge](https://www.aicrowd.com/challenges/epfl-ml-road-segmentation)
+The set of training and test images is available on this page: [EPFL ML Road Segmentation challenge](https://www.aicrowd.com)
 
 ## Prerequisites
 
