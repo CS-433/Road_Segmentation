@@ -26,6 +26,8 @@ This project has been realized using:
 
 ## Structure of files
 
+
+
 ML_project  
  |-- data  
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- training  
@@ -54,6 +56,7 @@ ML_project
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- submission_unet_augbcp_f32_p128.csv    
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...    
  
+PARLER PLUS DE QUOI SONT COMPOSES LES FILES 
  
 
 ## Contributors
