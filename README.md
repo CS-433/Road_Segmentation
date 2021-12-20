@@ -7,9 +7,12 @@ To detect roads, Different classifiers are created in this project and their eff
 In this project, patches of size 16x16 are classified: if a road is detected in the patch the classififer ouputs 1 and if not it ouputs 0. 
 An example of an aerial image used for training and its mask is shown below:
 
-<img src="ML_project/training/images/satImage_001.png"  alt="classdiagram" title = "First image of the training set." width="300"/>
-<img src="ML_project/training/groundtruth/satImage_001.png" title = "Masks of the first training image." alt="classdiagram" width="300"/ >
+ 
 
+<p float="left">
+<img src="ML_project/training/images/satImage_001.png"  alt="classdiagram"  width="300"/>
+<img src="ML_project/training/groundtruth/satImage_001.png"  alt="classdiagram" width="300"/ >
+</p>
 ## Prerequisites
 
 * python3.9
