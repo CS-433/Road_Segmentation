@@ -8,7 +8,7 @@ In this project, patches of size 16x16 are classified: if a road is detected in 
 An example of an aerial image used for training and its mask is shown below:
 
 <p float="left">
-<img src="ML_project/training/images/satImage_001.png" alt="classdiagram" width="200" title= "Imagz1">
+<img src="ML_project/training/images/satImage_001.png" alt="classdiagram" title="oi" width="200">
 <img src="ML_project/training/groundtruth/satImage_001.png"  alt="classdiagram" width="200" >
 </p>
 
