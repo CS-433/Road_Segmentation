@@ -14,6 +14,7 @@ An example of an aerial image used for training and its mask is shown below:
 
 ## Prerequisites
 
+This project has been realized using:
 * python3.9
 * numpy
 * segmentation_models
