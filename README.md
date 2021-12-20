@@ -10,8 +10,9 @@ An example of an aerial image used for training and its mask is shown below:
  
 
 <p float="left">
-<img src="ML_project/training/images/satImage_001.png"  alt="classdiagram"  width="300"/>
-<img src="ML_project/training/groundtruth/satImage_001.png"  alt="classdiagram" width="300"/ >
+<img src="ML_project/training/images/satImage_001.png"  alt="classdiagram" title="Angular" width="200"/>
+<img src="ML_project/training/groundtruth/satImage_001.png"  alt="classdiagram" width="200"/ >
+ 
 </p>
 ## Prerequisites
 
