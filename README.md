@@ -1,4 +1,4 @@
-# Road Segmentation
+# Road Segmentation /AIcrowd challenge
 ml-project-2-the-happy-whales2 created by GitHub Classroom
 
 The goal of the project is to segment roads in  satellite/aerial images acquired from GoogleMaps. 
@@ -46,7 +46,7 @@ ML_project
  |-- saved_models  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- unet_aug4rot_Gblur5_Flips.hdf5  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
- |-- prediciton_unet  
+ |-- prediction_unet  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- pred_1_unet.png    
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
  |-- submissions  
