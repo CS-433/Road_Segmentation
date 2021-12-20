@@ -55,6 +55,6 @@ ML_project
  
 
 ## Contributors
-*Charlotte Sertic
-*Estelle Chabanel
-*Servane Lunven
+* Charlotte Sertic
+* Estelle Chabanel
+* Servane Lunven
