@@ -1,4 +1,4 @@
-# ml-project-2-the-happy-whales2
+# Road Segmentation
 ml-project-2-the-happy-whales2 created by GitHub Classroom
 
 The goal of the project is to segment roads in  satellite/aerial images acquired from GoogleMaps. 
@@ -54,4 +54,7 @@ ML_project
  
  
 
-## Usage
+## Contributors
+*Charlotte Sertic
+*Estelle Chabanel
+*Servane Lunven
