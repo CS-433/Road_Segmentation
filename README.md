@@ -65,12 +65,12 @@ ML project
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `cnn_aug.h5`: final CNN model trained on augmented dataset  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `unet_noaug.hdf5`: final U-Net model trained on original dataset  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `unet_aug.hdf5`: final U-Net model trained on augmented dataset  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `resnet34_noaug.hdf5`: final Multinet model trained on original dataset   
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `seresnet34_noaug.hdf5`: final Multinet model trained on original dataset   
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `resnet50_noaug.hdf5`: final Multinet model trained on original dataset   
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `resnet34_aug.hdf5`: final Multinet model trained on original dataset   
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `seresnet34_aug.hdf5`: final Multinet model trained on original dataset   
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `resnet50_aug.hdf5`: final Multinet model trained on augmented dataset   
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `resnet34_noaug.hdf5`: resnet34 model for the final Multinet model trained on original dataset   
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `seresnet34_noaug.hdf5`: seresnet34 model for the final Multinet model trained on original dataset   
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `resnet50_noaug.hdf5`: resnet50 model for the final Multinet model trained on original dataset   
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `resnet34_aug.hdf5`: resnet34 model for the final Multinet model trained on original dataset   
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `seresnet34_aug.hdf5`: seresnet34 model for the final Multinet model trained on original dataset   
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `resnet50_aug.hdf5`: resnet50 model for the final Multinet model trained on augmented dataset   
  |-- **prediction_unet**: predicted masks of the best model (Multi-Resnet trained on augmented dataset)   
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- pred_1_unet.png    
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
