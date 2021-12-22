@@ -54,8 +54,8 @@ ML project
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `run.py`: create predictions for the testing dataset and create and save the submission file    
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `data_augmentation.py`: create the augmented training dataset  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- **models**: files with functions for the definition of the models  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `cnn_model.py`: for the CNN model  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `unet.py`: for the U-Net model  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `cnn_model.py`: for the CNN model  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `unet.py`: for the U-Net model  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- **utilisites**: files with necessary functions  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `data_preprocessing.py`: functions for the preprocessing on the images before training or testing  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `helpers_train.py`: functions for the training of the models   
@@ -71,11 +71,11 @@ ML project
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- pred_1_unet.png    
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
  |-- **submissions**: submission files for AIcrowd, only 6 of them are stored here, the ones corresponding to the fina results presented in the report  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_cnn_noaug.csv`: final CNN model on original dataset 
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_cnn_aug.csv`: final CNN model on original dataset 
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_noaug.csv`: final U-Net model on original dataset 
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_aug.csv`: final U-Net model on augmented dataset 
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_multinet_noaug.csv`: fianl Multi-resnet model on original dataset    
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_cnn_noaug.csv`: final CNN model on original dataset  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_cnn_aug.csv`: final CNN model on original dataset  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_noaug.csv`: final U-Net model on original dataset   
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_aug.csv`: final U-Net model on augmented dataset  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_multinet_noaug.csv`: fianl Multi-resnet model on original dataset       
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_multinet_aug.csv`: final Multi-resnet model on augmented dataset  
   
 
