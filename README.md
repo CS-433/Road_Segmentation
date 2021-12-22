@@ -52,8 +52,11 @@ ML project
  |-- **src**: script files  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `train.py`: train the different models implemented, first lines have to be modified accoriding to the desired model   
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `run.py`: create predictions for the testing dataset and create and save the submission file    
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `DataPreprocessing.py`: realize all the preprocessing on the images before training or testing  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `DataAugmentation.py`: create the augmented training dataset  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `data_augmentation.py`: create the augmented training dataset  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- **helpers.py**: files with necessary functions  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `data_preprocessing.py`: functions for the preprocessing on the images before training or testing  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `helpers_train.py`: functions for the training of the models  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `helpers_run.py`: functions for the test of the models and the submission
  |-- **saved_models**  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `unet_aug4rot_Gblur5_Flips.hdf5`: final model  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
