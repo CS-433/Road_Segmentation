@@ -53,7 +53,11 @@ ML project
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `train.py`: train the different models implemented, first lines have to be modified accoriding to the desired model   
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `run.py`: create predictions for the testing dataset and create and save the submission file    
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `data_augmentation.py`: create the augmented training dataset  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- **helpers.py**: files with necessary functions  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- **models**: files with functions for the definition of the models  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `cnn_model.py`: for the CNN model  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `unet.py`: for the U-Net model  
+
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- **utilisites**: files with necessary functions  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `data_preprocessing.py`: functions for the preprocessing on the images before training or testing  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `helpers_train.py`: functions for the training of the models  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `helpers_run.py`: functions for the test of the models and the submission
