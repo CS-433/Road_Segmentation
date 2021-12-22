@@ -32,36 +32,36 @@ ML project
 
  |-- **data**  
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **training**: original training dataset  
- |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **images** (100 satellite images) 
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **images** (100 satellite images)  
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |--satImage_001.png  
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- ...  
- |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **groundtruth** (100 groundtruth images)
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **groundtruth** (100 groundtruth images)  
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |--satImage_001.png  
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- ...  
- |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **augmented_training**: created augmented dataset for the training
- |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **images** (1000 satellite images)
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **augmented_training**: created augmented dataset for the training  
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **images** (1000 satellite images)  
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |--satImage_001.png  
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- ...  
- |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **groundtruth**  (1000 groundtruth images)
+ |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **groundtruth**  (1000 groundtruth images)  
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |--satImage_001.png  
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- ...  
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **test_set**: original testing dataset   
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- **images** (50 satellite images)  
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |--test_1.png    
  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |&nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- ...    
- |-- **src**: script files
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `train.py`: train the different models implemented, first lines have to be modified accoriding to the desired model 
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `run.py`: create predictions for the testing dataset and create and save the submission file  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `DataPreprocessing.py`: realize all the preprocessing on the images before training or testing
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `DataAugmentation.py`: create the augmented training dataset
+ |-- **src**: script files  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `train.py`: train the different models implemented, first lines have to be modified accoriding to the desired model   
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `run.py`: create predictions for the testing dataset and create and save the submission file    
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `DataPreprocessing.py`: realize all the preprocessing on the images before training or testing  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `DataAugmentation.py`: create the augmented training dataset  
  |-- **saved_models**  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `unet_aug4rot_Gblur5_Flips.hdf5`: final model for the   
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `unet_aug4rot_Gblur5_Flips.hdf5`: final model  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
- |-- **prediction_unet**: predicted masks of the best model (Multi-Resnet trained on augmented dataset)
+ |-- **prediction_unet**: predicted masks of the best model (Multi-Resnet trained on augmented dataset)  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- pred_1_unet.png    
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
  |-- **submissions**: submission files for AIcrowd  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_augbcp_f32_p128.csv`
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_augbcp_f32_p128.csv`  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...    
   
 
