@@ -62,14 +62,22 @@ ML project
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `helpers_train.py`: functions for the training of the models  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `helpers_run.py`: functions for the test of the models and the submission
  |-- **saved_models**  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `unet_aug4rot_Gblur5_Flips.hdf5`: final model  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `cnn_noaug.h5`: final CNN model trained on original dataset
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `cnn_aug.h5`: final CNN model trained on augmented dataset
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `unet_noaug.hdf5`: final U-Net model trained on original dataset
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `unet_aug.hdf5`: final U-Net model trained on augmented dataset
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `multinet_noaug.hdf5`: final Multinet model trained on original dataset 
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `multinet_aug.hdf5`: final Multinet model trained on augmented dataset 
  |-- **prediction_unet**: predicted masks of the best model (Multi-Resnet trained on augmented dataset)  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- pred_1_unet.png    
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
- |-- **submissions**: submission files for AIcrowd  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_augbcp_f32_p128.csv`  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...    
+ |-- **submissions**: submission files for AIcrowd, only 6 of them are stored here, the ones corresponding to the fina results presented in the report  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_cnn_noaug.csv`: final CNN model on original dataset 
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_cnn_aug.csv`: final CNN model on original dataset 
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_noaug.csv`: final U-Net model on original dataset 
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_aug.csv`: final U-Net model on augmented dataset 
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_multinet_noaug.csv`: fianl Multi-resnet model on original dataset    
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_multinet_aug.csv`: final Multi-resnet model on augmented dataset  
   
 
 ## Contributors
