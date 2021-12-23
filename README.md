@@ -8,8 +8,8 @@ In this project, patches of size 16x16 are classified: if a road is detected in 
 An example of an aerial image used for training and its mask is shown below:
 
 <p float="left">
-<img src="ML_projet/data/training/images/satImage_001.png" alt="classdiagram"  width="200" title="hover text">
-<img src="ML_projet/data/training/groundtruth/satImage_001.png"  alt="classdiagram" width="200" >
+<img src="../ML_projet/data/training/images/satImage_001.png" alt="classdiagram"  width="200" title="hover text">
+<img src="../ML_projet/data/training/groundtruth/satImage_001.png"  alt="classdiagram" width="200" >
 </p>
 The set of training and test images is available on this page: [EPFL ML Road Segmentation challenge](https://www.aicrowd.com/challenges/epfl-ml-road-segmentation). 
 
