@@ -8,8 +8,8 @@ In this project, patches of size 16x16 are classified: if a road is detected in 
 An example of an aerial image used for training and its mask is shown below:
 
 <p float="left">
-<img src="ML_project/data/training/images/satImage_001.png" alt="classdiagram"  width="200" title="hover text">
-<img src="ML_project/data/training/groundtruth/satImage_001.png"  alt="classdiagram" width="200" >
+<img src="ML_projet/data/training/images/satImage_001.png" alt="classdiagram"  width="200" title="hover text">
+<img src="ML_projet/data/training/groundtruth/satImage_001.png"  alt="classdiagram" width="200" >
 </p>
 The set of training and test images is available on this page: [EPFL ML Road Segmentation challenge](https://www.aicrowd.com/challenges/epfl-ml-road-segmentation). 
 
@@ -83,9 +83,12 @@ ML project
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_multinet_aug.csv`: final Multi-resnet model on augmented dataset  
   
 ## Usage 
-
+One can access the saved models in the google drive:
+`https://drive.google.com/drive/folders/1Yt2N6YO7XZkUdVjKsYC2w7NswY3phRAQ?usp=sharing`  
+One can either run the model from google colab with the file train.ipynb and run.ipynb or from  
+one's computer with train.py and run.py
 ### How to train the model
-In train.py:  
+In train.py/ipynb:  
 * Choose patches with PATCHES = 256 or 128  
 * TRAINING = 1: training with no validation set, TRAINING = 0: training with validation set  
 * TEST_SIZE = choose test size <1  
@@ -97,7 +100,7 @@ Run train.py with :
 `python3.9 src/train.py`
 
 ### How to run the model  
-In run.py:  
+In run.py/ipynb:  
 * Choose patch size with PATCHES = 256 or 128  
 * Choose number of models predicted. MODEL_NR = 3: ensemble prediction of 3 models, MODEL_NR = 1: prediction on 1 model  
 * If model is CNN, CNN = True   
