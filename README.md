@@ -110,6 +110,7 @@ Run `run.py` with :
 `python3.9 src/run.py`  
 
 
+### Contributors 
 
 * Charlotte Sertic
 * Estelle Chabanel
