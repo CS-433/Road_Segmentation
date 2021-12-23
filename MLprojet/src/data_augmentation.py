@@ -7,6 +7,8 @@ import cv2
 import imutils
 import random
 import scipy
+import os
+from scipy import ndimage
 
 %load_ext autoreload
 %autoreload 2
@@ -37,19 +39,21 @@ def augment_one(img, mask, n):
     """
     
     # Find the repository to save the augmented data :
-    save_dir = "training/augmented_4rot180_Gblur5_Flips/"
+    save_dir = "MLprojet/data/augmented_training/"
     save_dirimg = save_dir + "images/"
     save_dirmask = save_dir + "groundtruth/"
     
     # Save original image and mask
     nb = n*10+1
-    mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
+    print(mask.shape)
+    print(img.shape)
+    img = cv2.convertScaleAbs(img, alpha=(255.0))
+    mask = cv2.convertScaleAbs(mask, alpha=(255.0))
+    # mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
     cv2.imwrite(save_dirimg + 'satImage_' + str(nb).zfill(4) + '.png', img)
-    cv2.imwrite(save_dirmask + 'satImage_' + str(nb).zfill(4) + '.png', mask)#, cmap='gray')
+    cv2.imwrite(save_dirmask + 'satImage_' + str(nb).zfill(4) + '.png', mask)
     nb += 1
-    
-    LEN_IMG = 400
-    
+      
     # Data Augmentation and saving of the new data
     # Horizontal flip
     hflip_img = np.flip(img, 1)
@@ -118,17 +122,16 @@ def augment_all(n, imgs, masks):
     for i in range(n):
         print(i)
         augment_one(imgs[i], gt_imgs[i], i)
-        print(aug_img.shape)
+        print(imgs[i].shape)
     
     return
 
 # ----------------------------------------Main()
 
-
 # Load the original set of training images (pairs satellite-ground truth images)
 
 # Satellite images
-root_dir = "training/"
+root_dir = "MLprojet/data/training/"
 image_dir = root_dir + "images/"
 files = os.listdir(image_dir)
 n = len(files)
