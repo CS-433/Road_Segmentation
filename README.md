@@ -89,7 +89,7 @@ One can access the saved models in the google drive:
 One can either run the model from google colab with the file train.ipynb and run.ipynb or from  
 one's computer with train.py and run.py
 ### How to train the model
-In train.py/ipynb:  
+In `train.py/ipynb`:  
 * Choose patches with PATCHES = 256 or 128  
 * TRAINING = 1: training with no validation set, TRAINING = 0: training with validation set  
 * TEST_SIZE = choose test size <1  
@@ -97,16 +97,16 @@ In train.py/ipynb:
 * Choose BATCH_SIZE  
 * Choose model with MODEL = "UNET" or "RESNET34" or "SERESNET34" or "RESNET50" or "CNN"  
 
-Run train.py with :
+Run `train.py` with :
 `python3.9 src/train.py`
 
 ### How to run the model  
-In run.py/ipynb:  
+In `run.py/ipynb`:  
 * Choose patch size with PATCHES = 256 or 128  
 * Choose number of models predicted. MODEL_NR = 3: ensemble prediction of 3 models, MODEL_NR = 1: prediction on 1 model  
 * If model is CNN, CNN = True   
 
-Run run.py with :  
+Run `run.py` with :  
 `python3.9 src/run.py`  
 
 
