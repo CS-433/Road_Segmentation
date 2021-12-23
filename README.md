@@ -61,7 +61,7 @@ ML project
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `data_preprocessing.py`: functions for the preprocessing on the images before training or testing  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `helpers_train.py`: functions for the training of the models   
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  |-- `helpers_run.py`: functions for the test of the models and the submission  
- |-- **saved_models**  
+ |-- **saved_models**: this folder is not in the github folder as it was to large. One can download it from the Google drive folder.  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `cnn_noaug.h5`: final CNN model trained on original dataset  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `cnn_aug.h5`: final CNN model trained on augmented dataset  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `unet_noaug.hdf5`: final U-Net model trained on original dataset  
@@ -75,7 +75,7 @@ ML project
  |-- **prediction_unet**: predicted masks of the best model (Multi-Resnet trained on augmented dataset)   
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- pred_1_unet.png    
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
- |-- **submissions**: submission files for AIcrowd, only 6 of them are stored here, the ones corresponding to the fina results presented in the report  
+ |-- **submissions**: submission files for AIcrowd, only 6 of them are stored here, the ones corresponding to the final results presented in the report  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_cnn_noaug.csv`: final CNN model on original dataset  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_cnn_aug.csv`: final CNN model on original dataset  
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_noaug.csv`: final U-Net model on original dataset   
