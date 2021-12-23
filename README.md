@@ -26,7 +26,7 @@ This project has been realized using:
 
 ## Structure of files
 
-The folder **MLprojet** has to be download and run on Google Colab to use the GPU or one's computer. Make sure that the files of ML_project are identical to the file structure shown below, before trying to run the code.  
+The folder **MLprojet** has to be download and run on Google Colab to use the GPU or one's computer. Make sure that the files of ML_project are identical to the file structure shown below, before trying to run the code one the computer.  
 It contains several sub-folders:
 
 ML project
