@@ -72,7 +72,7 @@ ML project
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `resnet34_aug.hdf5`: resnet34 model for the final Multinet model trained on original dataset   
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `seresnet34_aug.hdf5`: seresnet34 model for the final Multinet model trained on original dataset   
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `resnet50_aug.hdf5`: resnet50 model for the final Multinet model trained on augmented dataset   
- |-- **prediction_unet**: predicted masks of the best model (Multi-Resnet trained on augmented dataset)   
+ |-- **prediction_unet**: predicted masks of the best model (Multi-Resnet trained on augmented dataset, corresponding to file `submission_multinet_aug.csv`)   
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- pred_1_unet.png    
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
  |-- **submissions**: submission files for AIcrowd, only 6 of them are stored here, the ones corresponding to the final results presented in the report  
