@@ -22,7 +22,10 @@ This project has been realized using:
 * `patchify`
 * `matplotlib`
 * `keras`
-* `tensorfow= 2.7.0`
+* `tensorfow= 2.7.0`  
+* `openCV`  
+* `scipy`  
+* `pandas`  
 
 ## Structure of files
 
