@@ -16,21 +16,13 @@ from sklearn.model_selection import train_test_split
 import sys 
 
 #  Install segmentation models
-#!pip install -U --pre segmentation-models
 import segmentation_models as sm
 sm.set_framework('tf.keras')
 sm.framework()
 
 # Install patchify
-#!pip install patchify
 from patchify import patchify
 
-
-# Test if the GPU is connected
-#device_name = tf.test.gpu_device_name()
-#if device_name != '/device:GPU:0':
-    #raise SystemError('GPU device not found')
-#print('Found GPU at: {}'.format(device_name))
 
 # Import from utilities
 import utilities.helpers_train
