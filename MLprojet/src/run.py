@@ -28,7 +28,7 @@ from models.cnn_model  import *
 
 # Variables
 PATCHES = 256
-MODEL_NR = 3
+MODEL_NR = 1
 CNN = False
 
 #Load test images
@@ -55,7 +55,7 @@ else:
 
     #Load model(s)
     if(MODEL_NR == 1):
-        model = load_model("../MLprojet/saved_models/unet_aug.hdf5", compile=False)
+        model = load_model("../MLprojet/saved_models/resnet50_aug.hdf5", compile=False)
     elif(MODEL_NR == 3):
         model1 = load_model("../MLprojet/saved_models/resnet34_aug.hdf5", compile=False)
         model2 = load_model("../MLprojet/saved_models/seresnet34_aug.hdf5", compile=False)
