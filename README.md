@@ -26,7 +26,7 @@ This project has been realized using:
 
 ## Structure of files
 
-The folder **ML project** has to be download and run on Google Collab to use the GPU. It contains several sub-folders:
+The folder **MLprojet** has to be download and run on Google Collab to use the GPU. It contains several sub-folders:
 
 ML project
 
