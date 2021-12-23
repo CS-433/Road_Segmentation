@@ -22,7 +22,10 @@ This project has been realized using:
 * `patchify`
 * `matplotlib`
 * `keras`
-* `tensorfow= 2.7.0`
+* `tensorfow= 2.7.0`  
+* `openCV`  
+* `scipy`  
+* `pandas`  
 
 ## Structure of files
 
@@ -72,16 +75,17 @@ ML project
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `resnet34_aug.hdf5`: resnet34 model for the final Multinet model trained on original dataset   
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `seresnet34_aug.hdf5`: seresnet34 model for the final Multinet model trained on original dataset   
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `resnet50_aug.hdf5`: resnet50 model for the final Multinet model trained on augmented dataset   
- |-- **prediction_unet**: predicted masks of the best model (Multi-Resnet trained on augmented dataset, corresponding to file `submission_multinet_aug.csv`)   
+ |-- **prediction_unet**: predicted masks of the best model (Multi-Resnet trained on augmented dataset, corresponding to file `submission_final.csv`)   
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- pred_1_unet.png    
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |--  ...   
  |-- **submissions**: submission files for AIcrowd, only 6 of them are stored here, the ones corresponding to the final results presented in the report  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_cnn_noaug.csv`: final CNN model on original dataset  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_cnn_aug.csv`: final CNN model on original dataset  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_noaug.csv`: final U-Net model on original dataset   
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_aug.csv`: final U-Net model on augmented dataset  
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_multinet_noaug.csv`: fianl Multi-resnet model on original dataset       
- |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_multinet_aug.csv`: final Multi-resnet model on augmented dataset  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_cnn_noaug.csv`: final submission for the CNN model on original dataset  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_cnn_aug.csv`: final submission for the  CNN model on original dataset  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_noaug.csv`: final submission for the U-Net model on original dataset   
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_unet_aug.csv`: final submission for the U-Net model on augmented dataset  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_multinet_noaug.csv`: final submission for the Multi-resnet model on original dataset       
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_multinet_aug.csv`: final submission for the Multi-resnet model on augmented dataset  
+ |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_final.csv`: final submission for the final model, that gave the best results: Multi-resnet model on augmented dataset 
   
 ## Usage 
 One can access the saved models in the google drive:
