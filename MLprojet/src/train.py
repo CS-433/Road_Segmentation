@@ -150,4 +150,5 @@ else:
 
     #Save the model for future use
     #model.save("../MLprojet/saved_models/model_name.hdf5")
+    #model.save("../MLprojet/saved_models/model_name.hdf5")
     #print("model saved !")

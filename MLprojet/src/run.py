@@ -28,7 +28,7 @@ from models.cnn_model  import *
 
 # Variables
 PATCHES = 256
-MODEL_NR = 1
+MODEL_NR = 3
 CNN = False
 
 #Load test images
@@ -106,7 +106,7 @@ else:
     
 
     # Create submission
-    submission_filename= '../MLprojet/submissions/submission.csv'
+    submission_filename= '../MLprojet/submissions/submission_multinet_aug.csv'
     masks_to_submission(submission_filename, *image_filenames_predict)
 
 
