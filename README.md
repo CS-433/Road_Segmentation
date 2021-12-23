@@ -82,8 +82,31 @@ ML project
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_multinet_noaug.csv`: fianl Multi-resnet model on original dataset       
  |&nbsp;  &nbsp; &nbsp;  &nbsp;  |-- `submission_multinet_aug.csv`: final Multi-resnet model on augmented dataset  
   
+## Usage 
 
-## Contributors
+### How to train the model
+In train.py:  
+* Choose patches with PATCHES = 256 or 128  
+* TRAINING = 1: training with no validation set, TRAINING = 0: training with validation set  
+* TEST_SIZE = choose test size <1  
+* Choose EPOCHS  
+* Choose BATCH_SIZE  
+* Choose model with MODEL = "UNET" or "RESNET34" or "SERESNET34" or "RESNET50" or "CNN"  
+
+Run train.py with :
+`python3.9 src/train.py`
+
+### How to run the model  
+In run.py:  
+* Choose patch size with PATCHES = 256 or 128  
+* Choose number of models predicted. MODEL_NR = 3: ensemble prediction of 3 models, MODEL_NR = 1: prediction on 1 model  
+* If model is CNN, CNN = True   
+
+Run train.py with :  
+`python3.9 src/run.py`  
+
+
+
 * Charlotte Sertic
 * Estelle Chabanel
 * Servane Lunven
