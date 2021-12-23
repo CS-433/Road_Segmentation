@@ -16,13 +16,13 @@ The set of training and test images is available on this page: [EPFL ML Road Seg
 ## Prerequisites
 
 This project has been realized using:
-* python3.9
-* numpy
-* segmentation_models
-* patchify
-* matplotlib
-* keras
-* tensorfow= 2.7.0
+* `python3.9`
+* `numpy`
+* `segmentation_models`
+* `patchify`
+* `matplotlib`
+* `keras`
+* `tensorfow= 2.7.0`
 
 ## Structure of files
 
