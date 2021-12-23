@@ -102,7 +102,7 @@ In run.py:
 * Choose number of models predicted. MODEL_NR = 3: ensemble prediction of 3 models, MODEL_NR = 1: prediction on 1 model  
 * If model is CNN, CNN = True   
 
-Run train.py with :  
+Run run.py with :  
 `python3.9 src/run.py`  
 
 
